@@ -1,0 +1,26 @@
+<form [formGroup]="userForm">
+    <ng-container *ngFor="let field of fields">
+        <div class="row">
+            <div class="col-12">
+                <label>{{field.label}}</label>
+
+                <ng-container *ngIf="field.type != 'select' && field.type != 'date'">
+                    <input [type]="field.type" [formControlName]="field.fieldName" class="form-control" />
+                </ng-container>
+
+                <ng-container *ngIf="field.type == 'date'">
+                    <input [type]="field.type" (input)="parseDate($event)" [formControlName]="field.fieldName"
+                        class="form-control" />
+                </ng-container>
+
+                <ng-container *ngIf="field.type == 'select'">
+                    <select [formControlName]="field.fieldName" class="form-control">
+                        <option *ngFor="let option of field.options" [value]="option.value">
+                            {{option.label}}
+                        </option>
+                    </select>
+                </ng-container>
+            </div>
+        </div>
+    </ng-container>
+</form>
