@@ -57,8 +57,8 @@ export class FormCompComponent implements OnInit, AfterViewInit {
 
     private addValidator(rules: any) {
 
-        console.log(rules)
-        console.log(Object.keys(rules))
+        // console.log(rules)
+        // console.log(Object.keys(rules))
 
         if (!rules) {
             return [];
@@ -72,8 +72,6 @@ export class FormCompComponent implements OnInit, AfterViewInit {
         //     switch (rule) {
         //         case "required":
         //             return [Validators.required];
-        //         //add more cases for the future.
-
         //         // case "default":
         //         //     return [];
         //         //add more cases for the future.
@@ -81,19 +79,17 @@ export class FormCompComponent implements OnInit, AfterViewInit {
         //         //     return [];
         //         // [Validators.required, Validators.pattern(rules[rule])]
         //         // case "minlength":
-        //         //     return Validators.minLength(rules[rule]);
+        //         //     return [Validators.minLength(rules[rule])];
         //         // case "maxlength":
-        //         //     return Validators.maxLength(rules[rule]);
+        //         //     return [Validators.maxLength(rules[rule])];
         //         // case "pattern":
-        //         //     return Validators.pattern(rules[rule]);
+        //         //     return [Validators.pattern(rules[rule])];
         //         // case "email":
-        //         //     return Validators.email;
+        //         //     return [Validators.email];
         //         // case "min":
-        //         //     return Validators.min(rules[rule]);
+        //         //     return [Validators.min(rules[rule])];
         //         // case "max":
-        //         //     return Validators.max(rules[rule]);
-        //         // case "date":
-        //         //     return Validators.pattern(/^\d{4
+        //         //     return [Validators.max(rules[rule])];
         //     }
         // });
         // return validators;

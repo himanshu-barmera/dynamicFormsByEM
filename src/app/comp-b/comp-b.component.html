@@ -1,1 +1,19 @@
-<p>comp-b works!</p>
+<div class="container-fluid my-3">
+    <div class="row">
+        <div class="col-md-12">Basic User Details in Comp B</div>
+    </div>
+</div>
+
+<div class="container-fluid">
+
+    <!-- <form [formGroup]="userForm"> -->
+
+    <app-form-comp [data]="userData" [(userForm)]="userForm"></app-form-comp>
+
+    <button type="submit" class="btn btn-primary" (click)="onSubmit()">
+        Save
+    </button>
+    <!-- </form> -->
+
+
+</div>

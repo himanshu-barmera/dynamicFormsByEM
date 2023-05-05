@@ -4,13 +4,13 @@
             <div class="col-12">
                 <label>{{field.label}}</label>
 
-                <ng-container *ngIf="field.type != 'select' && field.type != 'date'">
-                    <input [type]="field.type" [formControlName]="field.fieldName" class="form-control" />
-                </ng-container>
-
                 <ng-container *ngIf="field.type == 'date'">
                     <input [type]="field.type" (input)="parseDate($event)" [formControlName]="field.fieldName"
                         class="form-control" />
+                </ng-container>
+
+                <ng-container *ngIf="field.type != 'select' && field.type != 'date'">
+                    <input [type]="field.type" [formControlName]="field.fieldName" class="form-control" />
                 </ng-container>
 
                 <ng-container *ngIf="field.type == 'select'">
