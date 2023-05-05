@@ -9,7 +9,7 @@ import { FormCompComponent } from '../form-component/form-comp.component';
 })
 export class CompAComponent implements OnInit {
 
-    userForm !: FormGroup;
+    userForm: FormGroup = new FormGroup({});
     userData: any = {
         name: {
             name: "name",

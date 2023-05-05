@@ -7,7 +7,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
     styleUrls: ['./comp-b.component.css']
 })
 export class CompBComponent implements OnInit {
-    userForm !: FormGroup;
+    userForm: FormGroup = new FormGroup({});
     userData: any = {
         name: {
             name: "name",

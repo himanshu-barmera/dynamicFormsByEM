@@ -40,7 +40,6 @@ export class FormCompComponent implements OnInit, AfterViewInit {
             this.userForm.patchValue({
                 age: age
             });
-            // this.userForm.addControl('age', new FormControl(''));
         }
     }
 
@@ -55,43 +54,37 @@ export class FormCompComponent implements OnInit, AfterViewInit {
         return formGroupFields;
     }
 
-    private addValidator(rules: any) {
-
-        // console.log(rules)
-        // console.log(Object.keys(rules))
+    private addValidator(rules: any): any[] {
 
         if (!rules) {
             return [];
         }
-        else {
-            return rules;
-        }
 
-        // const validators = Object.keys(rules).map((rule) => {
-        //     console.log(rules)
-        //     switch (rule) {
-        //         case "required":
-        //             return [Validators.required];
-        //         // case "default":
-        //         //     return [];
-        //         //add more cases for the future.
-        //         // case "default":
-        //         //     return [];
-        //         // [Validators.required, Validators.pattern(rules[rule])]
-        //         // case "minlength":
-        //         //     return [Validators.minLength(rules[rule])];
-        //         // case "maxlength":
-        //         //     return [Validators.maxLength(rules[rule])];
-        //         // case "pattern":
-        //         //     return [Validators.pattern(rules[rule])];
-        //         // case "email":
-        //         //     return [Validators.email];
-        //         // case "min":
-        //         //     return [Validators.min(rules[rule])];
-        //         // case "max":
-        //         //     return [Validators.max(rules[rule])];
-        //     }
-        // });
-        // return validators;
+        const validators = Object.keys(rules).map((ruleKey) => {
+            console.log(rules)
+            switch (ruleKey) {
+                case "required":
+                    return Validators.required;
+                // case "minlength":
+                //     return Validators.minLength(rules[ruleKey]);
+                default:
+                    return;
+                //add more cases for the future.
+                // [Validators.required, Validators.pattern(rules[rule])]
+                // case "minlength":
+                //     return [Validators.minLength(rules[rule])];
+                // case "maxlength":
+                //     return [Validators.maxLength(rules[rule])];
+                // case "pattern":
+                //     return [Validators.pattern(rules[rule])];
+                // case "email":
+                //     return [Validators.email];
+                // case "min":
+                //     return [Validators.min(rules[rule])];
+                // case "max":
+                //     return [Validators.max(rules[rule])];
+            }
+        });
+        return validators;
     }
 }
